@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "fylO3N3C0o9zKQR0Pe4y7XsdB/zcB+9nmzrgC4qEz8JpoH9FUpIQuJM71cAhkDD6hx1h9CZlFz9uPwZmZe1uug==",
+  "success": true,
+  "projectFilePath": "C:\\DevelopmentRepos\\MapRevealer\\MapRevealer\\MapRevealer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\evan.f\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
+    "C:\\Users\\evan.f\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
+    "C:\\Users\\evan.f\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+  ],
+  "logs": []
+}
