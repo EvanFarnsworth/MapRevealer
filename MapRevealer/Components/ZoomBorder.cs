@@ -59,7 +59,7 @@ namespace MapRevealer.Components
         public int ZoomPercentage 
         { 
             get { return (int)GetValue(ZoomPercentageProperty); }
-            private set 
+            set 
             { 
                 SetValue(ZoomPercentageProperty, value);
                 CommandManager.InvalidateRequerySuggested();
@@ -90,6 +90,17 @@ namespace MapRevealer.Components
                                                                                                        typeof(int),
                                                                                                        typeof(ZoomBorder),
                                                                                                        new PropertyMetadata(1000));
+
+        public bool IsDisableZoomingBorder
+        {
+            get { return (bool)GetValue(IsDisableZoomingBorderProperty); }
+            set { SetValue(IsDisableZoomingBorderProperty, value); }
+        }
+
+        public static readonly DependencyProperty IsDisableZoomingBorderProperty = DependencyProperty.Register("IsDisableZoomingBorder",
+                                                                                                       typeof(bool),
+                                                                                                       typeof(ZoomBorder),
+                                                                                                       new PropertyMetadata(false));
         private TranslateTransform GetTranslateTransform(UIElement element)
         {
             return (TranslateTransform)((TransformGroup)element.RenderTransform)
@@ -136,7 +147,7 @@ namespace MapRevealer.Components
 
         private void Child_MouseWheel(object sender, MouseWheelEventArgs e)
         {
-            if (child != null)
+            if (child != null && !IsDisableZoomingBorder)
             {
                 var st = GetScaleTransform(child);
                 var tt = GetTranslateTransform(child);
@@ -168,7 +179,7 @@ namespace MapRevealer.Components
 
         private void Child_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (child != null)
+            if (child != null && !IsDisableZoomingBorder)
             {
                 var tt = GetTranslateTransform(child);
                 start = e.GetPosition(this);
@@ -180,7 +191,7 @@ namespace MapRevealer.Components
 
         private void Child_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (child != null)
+            if (child != null && !IsDisableZoomingBorder)
             {
                 child.ReleaseMouseCapture();
                 Cursor = Cursors.Arrow;
@@ -191,12 +202,13 @@ namespace MapRevealer.Components
 
         private void Child_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Reset();
+            if(!IsDisableZoomingBorder)
+                Reset();
         }
 
         private void Child_MouseMove(object sender, MouseEventArgs e)
         {
-            if (child != null)
+            if (child != null && !IsDisableZoomingBorder)
             {
                 if (child.IsMouseCaptured)
                 {

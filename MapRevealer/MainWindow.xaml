@@ -10,25 +10,82 @@
     Width="800"
     Height="450"
     Background="{DynamicResource MaterialDesignPaper}"
+    DataContext="{x:Static local:MainWindowViewModel.Instance}"
     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
     mc:Ignorable="d">
-    <Window.DataContext>
-        <local:MainWindowViewModel />
-    </Window.DataContext>
+    <Window.Resources>
+        <Style BasedOn="{StaticResource StandardButtonStyle}" TargetType="Button" />
+    </Window.Resources>
     <Grid>
         <comp:ZoomBorder
             x:Name="ImageZoomBorder"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
+            IsDisableZoomingBorder="{Binding IsDrawing}"
             TransformChanged="ImageZoomBorder_TransformChanged">
-            <Image
-                x:Name="MapDisplay"
-                Margin="0"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                IsEnabled="True"
-                Source="{Binding DisplayImage}"
-                Stretch="Uniform" />
+            <Grid>
+                <InkCanvas
+                    x:Name="FogCanvas"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Panel.ZIndex="6"
+                    x:FieldModifier="public"
+                    Background="Transparent"
+                    Cursor="Pen"
+                    EditingMode="EraseByPoint"
+                    ForceCursor="True"
+                    Opacity="0.5">
+                    <InkCanvas.DefaultDrawingAttributes>
+                        <DrawingAttributes
+                            Width="10"
+                            Height="10"
+                            Color="white" />
+                    </InkCanvas.DefaultDrawingAttributes>
+                </InkCanvas>
+                <InkCanvas
+                    x:Name="DrawCanvas"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Panel.ZIndex="2"
+                    x:FieldModifier="public"
+                    Background="Transparent"
+                    Cursor="Pen"
+                    EditingMode="Ink"
+                    ForceCursor="True"
+                    Opacity="1"
+                    StrokeCollected="DrawCanvas_StrokeCollected"
+                    StrokeErased="DrawCanvas_StrokeErased"
+                    StrokeErasing="DrawCanvas_StrokeErasing"
+                    Visibility="{Binding IsDrawing, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <InkCanvas.DefaultDrawingAttributes>
+                        <DrawingAttributes
+                            Width="7"
+                            Height="7"
+                            Color="Black" />
+                    </InkCanvas.DefaultDrawingAttributes>
+                </InkCanvas>
+                <Image
+                    x:Name="MapDisplay"
+                    Margin="0"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    IsEnabled="True"
+                    Source="{Binding DisplayImage}"
+                    Stretch="Uniform" />
+            </Grid>
         </comp:ZoomBorder>
+        <Button
+            x:Name="ToggleDisplay"
+            Width="200"
+            Height="50"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Click="ToggleDisplay_Click"
+            Content="Toggle Display" />
+        <ToggleButton
+            Margin="220,10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            IsChecked="{Binding IsDrawing}" />
     </Grid>
 </Window>

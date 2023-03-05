@@ -1,0 +1,41 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <ResourceDictionary.MergedDictionaries>
+        <materialDesign:CustomColorTheme
+            BaseTheme="Dark"
+            PrimaryColor="#2ba89a"
+            SecondaryColor="#8590e9" />
+        <ResourceDictionary Source="/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <system:Double x:Key="StandardFontSize">20</system:Double>
+    <system:Double x:Key="StandardButtonFontSize">24</system:Double>
+    <system:Double x:Key="StandardSubFontSize">18</system:Double>
+    <system:Double x:Key="LargerFontSize">24</system:Double>
+    <system:Double x:Key="ExtraLargeFontSize">32</system:Double>
+    <system:Double x:Key="DataReadoutFontSize">14</system:Double>
+    <system:Double x:Key="MinimumButtonHeight">40</system:Double>
+    <system:Double x:Key="MinimumButtonWidth">110</system:Double>
+    <Thickness x:Key="StandardContainerBorderThickness">1</Thickness>
+    <Thickness x:Key="StandardControlBorderThickness">0</Thickness>
+    <Thickness x:Key="StandardControlMargin">5</Thickness>
+    <Thickness x:Key="StandardLabelMargin">5,5,5,5</Thickness>
+    <Thickness x:Key="StandardSeparatorMargin">1,2,1,2</Thickness>
+    <Thickness x:Key="StandardControlPadding">10,5,10,5</Thickness>
+    <Thickness x:Key="StandardLabelPadding">2,1,2,1</Thickness>
+    <Thickness x:Key="StandardSmallControlMargin">2</Thickness>
+
+    <Style
+        x:Key="StandardButtonStyle"
+        BasedOn="{StaticResource MaterialDesignRaisedButton}"
+        TargetType="{x:Type ButtonBase}">
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Margin" Value="{StaticResource StandardControlMargin}" />
+        <Setter Property="FontSize" Value="{StaticResource StandardButtonFontSize}" />
+        <Setter Property="MinHeight" Value="{StaticResource MinimumButtonHeight}" />
+        <Setter Property="MinWidth" Value="{StaticResource MinimumButtonWidth}" />
+    </Style>
+</ResourceDictionary>
