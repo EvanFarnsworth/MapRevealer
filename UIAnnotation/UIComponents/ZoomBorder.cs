@@ -8,7 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 
 
-namespace MapRevealer.Components
+namespace UIAnnotation
 {
     /// <summary>
     /// Class that extends the WPF to allow panning and zooming
@@ -16,12 +16,12 @@ namespace MapRevealer.Components
     /// </summary>
     public class ZoomBorder : Border, IDisposable
     {
-        private UIElement child = null;
+        private UIElement? child = null;
         private Point origin;
         private Point start;
         private bool hasTranslated = false;
 
-        public event TransformEventHandler TransformChanged;
+        public event TransformEventHandler? TransformChanged;
 
         public void Initialize(UIElement element)
         {
@@ -113,7 +113,7 @@ namespace MapRevealer.Components
               .Children.First(tr => tr is ScaleTransform);
         }
 
-        public override UIElement Child
+        public override UIElement? Child
         {
             get { return base.Child; }
             set
@@ -142,7 +142,7 @@ namespace MapRevealer.Components
             }
         }
 
-        public RelayCommand ResetZoomCommand { get; set; }
+        public RelayCommand? ResetZoomCommand { get; set; }
         #region Child Events
 
         private void Child_MouseWheel(object sender, MouseWheelEventArgs e)

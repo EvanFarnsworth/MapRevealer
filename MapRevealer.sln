@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapRevealer", "MapRevealer\MapRevealer.csproj", "{E649EC8C-50B0-47E6-8927-01D6FAA4006F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapRevealer", "MapRevealer\MapRevealer.csproj", "{E649EC8C-50B0-47E6-8927-01D6FAA4006F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIAnnotation", "UIAnnotation\UIAnnotation.csproj", "{6A60219E-3D25-4691-8FCC-6AA5246E64CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E649EC8C-50B0-47E6-8927-01D6FAA4006F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E649EC8C-50B0-47E6-8927-01D6FAA4006F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E649EC8C-50B0-47E6-8927-01D6FAA4006F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A60219E-3D25-4691-8FCC-6AA5246E64CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A60219E-3D25-4691-8FCC-6AA5246E64CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A60219E-3D25-4691-8FCC-6AA5246E64CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A60219E-3D25-4691-8FCC-6AA5246E64CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

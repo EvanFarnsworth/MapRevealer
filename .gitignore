@@ -26,3 +26,6 @@
 /MapRevealer/obj/Debug/net6.0-windows/ref/MapRevealer.dll
 /MapRevealer/obj/Debug/net6.0-windows/refint/MapRevealer.dll
 /.vs/*
+DrawCanvas/bin/
+*/bin/*
+*/obj/*

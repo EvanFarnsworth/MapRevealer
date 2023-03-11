@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 
-namespace MapRevealer.Components
+namespace UIAnnotation
 {
     public delegate void TransformEventHandler(object sender, TransformEventArgs e);
     public class TransformEventArgs : EventArgs

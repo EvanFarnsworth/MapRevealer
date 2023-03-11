@@ -28,7 +28,7 @@ namespace MapRevealer
             _displayWindow = new DisplayWindow();
         }
 
-        private void ImageZoomBorder_TransformChanged(object sender, Components.TransformEventArgs e)
+        private void ImageZoomBorder_TransformChanged(object sender, UIAnnotation.TransformEventArgs e)
         {
             var group = new TransformGroup();
             var scale = new ScaleTransform(e.Scale.ScaleX, e.Scale.ScaleY);

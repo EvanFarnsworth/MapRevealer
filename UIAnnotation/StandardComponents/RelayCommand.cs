@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace MapRevealer.Components
+namespace UIAnnotation
 {
     /// <summary>
     /// From: https://stackoverflow.com/a/3531935/2444435
