@@ -17,8 +17,20 @@
         <Style BasedOn="{StaticResource StandardButtonStyle}" TargetType="Button" />
     </Window.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="40"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="*" MinHeight="40"/>
+        </Grid.RowDefinitions>
         <comp:ZoomBorder
             x:Name="ImageZoomBorder"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="10"
+            Grid.RowSpan="10"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             IsDisableZoomingBorder="{Binding IsDrawing}"

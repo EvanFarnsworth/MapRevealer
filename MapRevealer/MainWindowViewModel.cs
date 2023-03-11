@@ -13,7 +13,7 @@ namespace MapRevealer
         public static MainWindowViewModel Instance { get { return instance.Value; } }
         private MainWindowViewModel()
         {
-            DisplayImage = new BitmapImage(new Uri("C:\\Users\\evan.f\\Documents\\Personal\\welding amp guide.png"));
+            DisplayImage = new BitmapImage(new Uri("C:\\Users\\guido\\Documents\\D&D\\Acquisition\\faerun.jpg"));
         }
 
         private BitmapSource _displayImage;
